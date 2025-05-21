@@ -1,15 +1,28 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("Задание 1:");
+        String[] result1 = StringUtils.split("ab#12#453", "#");
+        System.out.println(Arrays.toString(result1));
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        String[] result2 = StringUtils.split("a?b?gf#e", "[?#]");
+        System.out.println(Arrays.toString(result2));
+
+        System.out.println("\nЗадание 2:");
+        MyStringBuilder1 msb1 = new MyStringBuilder1("Hello");
+        MyStringBuilder1 msb2 = new MyStringBuilder1(" World!");
+        System.out.println(msb1.append(msb2).toString());
+        System.out.println(msb1.append(123).toString());
+        System.out.println(msb1.toLowerCase().toString());
+        System.out.println(msb1.substring(2, 8).toString());
+
+        System.out.println("\nЗадание 3:");
+        MyStringBuilder2 msb3 = new MyStringBuilder2("abcdef");
+        MyStringBuilder2 msb4 = new MyStringBuilder2("12345");
+        System.out.println(msb3.insert(3, msb4).toString());
+        System.out.println(msb3.reverse().toString());
+        System.out.println(msb3.substring(2).toString());
+        System.out.println(msb3.toUpperCase().toString());
     }
 }
